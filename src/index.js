@@ -5,9 +5,16 @@ import  "./index.css";
 import { BrowserRouter as Router } from "react-router-dom";
 
 import App from "./App";
+import { StateProvider } from "./context/Stateprovider";
+import { initalState } from "./context/initialState";
+import reducer from "./context/reducer";
 
-ReactDOM.render(
+ReactDOM.render( 
     <Router>
+
+    <StateProvider initialState={initalState} reducer={reducer}>
     <App />
+
+    </StateProvider>
     </Router>
-     , document.getElementById("root"));
+    , document.getElementById("root"));
